@@ -71,9 +71,7 @@ Gereksiz veya tekrar eden indirmeleri önler
 
 Ayrıca sistem, kullanıcı davranışına göre öneri sunmak için hafif bir yapay zekâ modeli (lokal Python tabanlı) kullanır.
 
-pie title "Kod Bileşen Dağılımı"
-    "GUI (Tkinter/ttkbootstrap)" : 40
-    "AI Analiz Modülü" : 20
-    "yt-dlp Downloader" : 25
-    "Veritabanı & Loglama" : 10
-    "Yedekleme & Otomasyon" : 5
+## 🧠 Kod Bileşen Dağılımı
+
+![Kod Bileşen Dağılımı](https://quickchart.io/chart?c={type:'pie',data:{labels:['GUI%20(Tkinter/ttkbootstrap)','AI%20Analiz%20Modülü','yt-dlp%20Downloader','Veritabanı%20%26%20Loglama','Yedekleme%20%26%20Otomasyon'],datasets:[{data:[40,20,25,10,5],backgroundColor:['%2366b3ff','%2399ff99','%23ffcc99','%23ff9999','%23c2c2f0']}]},options:{plugins:{title:{display:true,text:'Kod Bileşen Dağılımı',font:{size:20}}}}})
+
