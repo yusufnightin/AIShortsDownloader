@@ -1,38 +1,79 @@
-<div align='center'>
+# 🤖 AIShorts – YouTube Shorts Downloader (AI Enhanced)
 
-<h1>Download all YouTube Shorts from a channel in a breeze! This script allows you to effortlessly download all shorts from a specified YouTube channel using Python 3.10.0 and above</h1>
-<h4> <span> · </span> <a href="https://github.com/Sewer2K/YouTube Shorts Bulk Downloader/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/Sewer2K/YouTube Shorts Bulk Downloader/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/Sewer2K/YouTube Shorts Bulk Downloader/issues"> Request Feature </a> </h4>
+AIShorts, YouTube Shorts videolarını toplu şekilde indirmenizi, yönetmenizi ve raporlamanızı sağlayan **AI destekli** bir masaüstü uygulamasıdır.  
+Tamamen Python ile geliştirilmiş olup, güçlü bir GUI arayüzü ve otomasyon altyapısına sahiptir.
+
+---
+
+## 🚀 Özellikler
+
+- 🎥 **Toplu Shorts İndirme:** Belirli bir kanal veya bağlantı listesinden tüm videoları indirir.  
+- 🤖 **AI Destekli Analiz:** İndirme geçmişini, video metadatalarını ve etkileşim oranlarını analiz ederek rapor oluşturur.  
+- 💾 **Otomatik Yedekleme:** Veritabanı, rapor ve log dosyalarını otomatik olarak yedekler.  
+- 🕒 **Zamanlayıcı & Otomasyon:** Belirlenen saat aralıklarında otomatik indirme başlatır.  
+- 🎨 **Modern GUI:** `Tkinter` + `ttkbootstrap` temalı arayüz, dinamik temalar (dark/light).  
+- ⚙️ **Ayar Kaydetme:** Tüm ayarlar `settings.json` dosyasında saklanır.  
+- 🔐 **Veritabanı Desteği:** `SQLite` tabanlı veri yönetimi (`shorts_manager.db`).  
+- 🌐 **Proxy Desteği:** IP koruması ve coğrafi erişim için proxy ile çalışma imkanı.  
+- 📊 **AI Raporlama:** `raporlar/` klasöründe detaylı analiz raporları oluşturur.
+
+---
+
+## 🧩 Kullanılan Teknolojiler
+
+| Bileşen | Açıklama | Kullanım Oranı |
+|----------|-----------|----------------|
+| 🐍 **Python** | Ana dil | 🟩🟩🟩🟩🟩 100% |
+| 🎨 **Tkinter / ttkbootstrap** | GUI tasarımı | 🟩🟩🟩🟩🟨 80% |
+| 🎥 **yt-dlp** | Video indirme altyapısı | 🟩🟩🟩🟩🟩 100% |
+| 🧠 **AI (analiz & karar motoru)** | İndirme önerileri & rapor analizi | 🟩🟩🟩🟩⬜ 70% |
+| 🗃️ **SQLite3** | Veritabanı & log sistemi | 🟩🟩🟩🟩🟩 100% |
+| 🧰 **PIL / Requests / Logging** | Görsel işleme, ağ bağlantısı ve hata kayıtları | 🟩🟩🟩🟩⬜ 85% |
+
+---
+
+## 📦 Kurulum
+
+### 1️⃣ Gerekli Bağımlılıkları Yükle:
+pip install -r requirements.txt 
 
 
-</div>
+### 2️⃣ Programı Başlat:
+Kodu kopyala
+python main.py
 
-# :notebook_with_decorative_cover: Table of Contents
+###3️⃣ Ayarları Yapılandır:
+Uygulama açıldıktan sonra:
 
-- [About the Project](#star2-about-the-project)
-- [Contributing](#wave-contributing)
+İndirme klasörünü seçin
 
+Kanal URL'sini ekleyin
 
-## :star2: About the Project
+Otomatik indirme ve AI rapor ayarlarını aktif edin
 
-### :camera: Screenshots
-<div align="center"> <a href=""><img src="https://cdn.discordapp.com/attachments/1083921622513225818/1175934302320590988/image.png?ex=656d0929&is=655a9429&hm=77a5955511826e443f5a0324e5f5aef968b004a592baf9e454bec2711a84781f&" alt='image' width='800'/></a> </div>
+###⚙️ requirements.txt
+yt-dlp
+Pillow
+requests
+ttkbootstrap
+concurrent-log-handler
+sqlite3-binary
+💡 sqlite3 Python’un içinde gömülü olarak gelir ancak bağımsız ortamlar için sqlite3-binary eklenmiştir.
 
+###🧠 AI Bileşenleri Hakkında
+AIShorts’un analiz motoru, indirme geçmişini ve rapor dosyalarını işleyerek:
 
+En çok izlenen Shorts içeriklerini tespit eder
 
-## :toolbox: Getting Started
+Ortalama izlenme süresi tahmini yapar
 
-### :gear: Installation
+Gereksiz veya tekrar eden indirmeleri önler
 
-install libraries
-```bash
-pip install requirements.txt
-```
+Ayrıca sistem, kullanıcı davranışına göre öneri sunmak için hafif bir yapay zekâ modeli (lokal Python tabanlı) kullanır.
 
-
-## :wave: Contributing
-
-<a href="https://github.com/Sewer2K/yt-shorts-bulk-downloader/graphs/contributors"> <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" /> </a>
-
-Contributions are always welcome!
-
-see `contributing.md` for ways to get started
+pie title "Kod Bileşen Dağılımı"
+    "GUI (Tkinter/ttkbootstrap)" : 40
+    "AI Analiz Modülü" : 20
+    "yt-dlp Downloader" : 25
+    "Veritabanı & Loglama" : 10
+    "Yedekleme & Otomasyon" : 5
