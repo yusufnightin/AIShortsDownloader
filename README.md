@@ -1,181 +1,179 @@
-🚀 AIShortsDownloader
+# 🚀 AIShortsDownloader
+
 <div align="center">
 
-Belirlenen YouTube kanallarından Shorts videolarını yapay zekâ ile keşfeden, seçen ve yüksek kalitede indiren otomatik sistem.
+[![GitHub stars](https://img.shields.io/github/stars/yusufnightin/AIShortsDownloader?style=for-the-badge)](https://github.com/yusufnightin/AIShortsDownloader/stargazers)
+
+[![GitHub forks](https://img.shields.io/github/forks/yusufnightin/AIShortsDownloader?style=for-the-badge)](https://github.com/yusufnightin/AIShortsDownloader/network)
+
+[![GitHub issues](https://img.shields.io/github/issues/yusufnightin/AIShortsDownloader?style=for-the-badge)](https://github.com/yusufnightin/AIShortsDownloader/issues)
+
+[![Python](https://img.shields.io/badge/python-3.x-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+
+**Automate YouTube Shorts discovery, intelligent selection, and high-quality downloading from specified channels.**
 
 </div>
-📖 Genel Bakış
 
-AIShortsDownloader, belirlenen YouTube kanallarından kısa videoları (Shorts) otomatik olarak bulmak, seçmek ve indirmek için tasarlanmış güçlü bir Python tabanlı sistemdir.
-İçerik üreticileri, pazarlamacılar veya belirli kriterlere (anahtar kelimeler, kanal ID’leri) göre kısa video içeriği toplamak isteyen herkes için idealdir.
-Sistem indirilen içerikleri yönetir, işlemleri kaydeder, raporlar oluşturur ve yedekleme işlevleriyle düzenli bir iş akışı sağlar.
+## 📖 Overview
 
-✨ Özellikler
+The `AIShortsDownloader` is a robust Python-based system designed to automate the process of finding, selecting, and downloading short videos from designated YouTube channels. It's built for content creators, marketers, or anyone needing to collect relevant short-form video content based on defined criteria (keywords, channel IDs) for analysis, curation, or creative projects. The system manages downloaded content, logs operations, generates reports, and provides backup functionalities, ensuring an efficient and organized workflow.
 
-🎯 YouTube Kanal Takibi: Belirlenen kanal listesinden otomatik olarak video verilerini çeker.
+## ✨ Features
 
-💡 Akıllı Video Seçimi (AI): Kullanıcı tarafından belirlenen anahtar kelimelere ve kriterlere göre Shorts videolarını filtreleyip seçer.
+-   🎯 **YouTube Channel Monitoring**: Automatically fetches video data from a configurable list of YouTube channels.
+-   💡 **Intelligent Short Video Selection**: Filters and selects shorts based on user-defined keywords and criteria, ensuring relevance.
+-   ⬇️ **High-Quality Video Downloading**: Leverages `yt-dlp` to download selected YouTube Shorts in the best available quality.
+-   🗄️ **Local Database Management**: Uses SQLite to track downloaded shorts, preventing duplicates and managing metadata.
+-   ⚙️ **Highly Configurable Settings**: All operational parameters, including API keys, channels, keywords, and paths, are easily managed via `settings.json`.
+-   📊 **Automated Logging & Reporting**: Records all operations and activities, and generates reports for oversight and analysis.
+-   💾 **Built-in Backup Mechanism**: Automatically backs up critical data at configurable intervals.
 
-⬇️ Yüksek Kaliteli Video İndirme: yt-dlp modülünü kullanarak seçilen Shorts videolarını en yüksek mevcut kalitede indirir.
+## 🛠️ Tech Stack
 
-🗄️ Yerel Veritabanı Yönetimi: SQLite veritabanı ile indirilen videoları takip eder, tekrar indirmeyi önler ve meta verileri yönetir.
+**Runtime:**
 
-⚙️ Kolay Yapılandırma: API anahtarları, kanallar, anahtar kelimeler ve yollar settings.json dosyası üzerinden kolayca düzenlenebilir.
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
-📊 Otomatik Loglama & Raporlama: Tüm işlemleri kaydeder ve analiz için raporlar üretir.
+**Libraries:**
 
-💾 Yerleşik Yedekleme Sistemi: Belirlenen aralıklarla önemli verileri otomatik olarak yedekler.
+[![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-green?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp)
 
-🛠️ Teknoloji Yığını (Tech Stack)
+[![Google API Python Client](https://img.shields.io/badge/Google_API_Client-Python-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://github.com/googleapis/google-api-python-client)
 
-Çalışma Ortamı:
+**Database:**
 
-Kütüphaneler:
+[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/index.html)
 
-Veritabanı:
+**Configuration:**
 
-Yapılandırma:
+[![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)](https://www.json.org/json-en.html)
 
-🚀 Hızlı Başlangıç
-Gereksinimler
+## 🚀 Quick Start
 
-Python 3.x: Sisteminizde Python 3.x kurulu olduğundan emin olun.
+### Prerequisites
+-   **Python 3.x**: Ensure Python 3.x is installed on your system.
+    ```bash
+    python --version
+    ```
+-   **YouTube Data API Key**: Obtain a YouTube Data API v3 key from the Google Cloud Console.
 
-python --version
+### Installation
 
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/yusufnightin/AIShortsDownloader.git
+    cd AIShortsDownloader
+    ```
 
-YouTube Data API Anahtarı: Google Cloud Console üzerinden bir YouTube Data API v3 anahtarı alın.
+2.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Kurulum
+3.  **Configuration setup**
+    *   Open `settings.json` in the root directory.
+    *   Replace `"YOUR_YOUTUBE_API_KEY"` with your actual Google YouTube Data API Key.
+    *   Update `channel_ids` with the YouTube channel IDs you wish to monitor.
+    *   Modify `keywords` to include relevant terms for selecting shorts.
+    *   Adjust `download_path`, `log_level`, `max_shorts_per_channel`, and `backup_interval_days` as needed.
 
-Depoyu klonlayın
+    Example `settings.json`:
+    ```json
+    {
+      "youtube_api_key": "YOUR_YOUTUBE_API_KEY",
+      "channel_ids": [
+        "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "UC-9-kyTW8ZkZNDHQJ6FgpwQ"
+      ],
+      "keywords": [
+        "tutorial",
+        "coding",
+        "funny moments",
+        "tech review"
+      ],
+      "download_path": "downloaded_shorts",
+      "log_level": "INFO",
+      "max_shorts_per_channel": 5,
+      "backup_interval_days": 3
+    }
+    ```
 
-git clone https://github.com/yusufnightin/AIShortsDownloader.git
-cd AIShortsDownloader
+4.  **Run the downloader**
+    ```bash
+    python main.py
+    ```
+    The script will start monitoring channels, selecting, and downloading shorts based on your configuration.
 
+## 📁 Project Structure
 
-Bağımlılıkları yükleyin
-
-pip install -r requirements.txt
-
-
-Yapılandırma ayarlarını düzenleyin
-
-settings.json dosyasını açın.
-
-"YOUR_YOUTUBE_API_KEY" kısmını kendi YouTube Data API anahtarınızla değiştirin.
-
-channel_ids alanına izlemek istediğiniz YouTube kanal ID’lerini ekleyin.
-
-keywords kısmına seçilecek Shorts videoları için ilgili anahtar kelimeleri yazın.
-
-download_path, log_level, max_shorts_per_channel ve backup_interval_days ayarlarını isteğinize göre düzenleyin.
-
-Örnek settings.json:
-
-{
-  "youtube_api_key": "YOUR_YOUTUBE_API_KEY",
-  "channel_ids": [
-    "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-    "UC-9-kyTW8ZkZNDHQJ6FgpwQ"
-  ],
-  "keywords": [
-    "eğitim",
-    "kodlama",
-    "komik anlar",
-    "teknoloji inceleme"
-  ],
-  "download_path": "downloaded_shorts",
-  "log_level": "INFO",
-  "max_shorts_per_channel": 5,
-  "backup_interval_days": 3
-}
-
-
-Programı çalıştırın
-
-python main.py
-
-
-Script, belirtilen kanalları izlemeye başlayacak, Shorts videolarını seçecek ve yapılandırmanıza göre indirecektir.
-
-📁 Proje Yapısı
+```
 AIShortsDownloader/
-├── main.py             # Ana uygulama mantığı ve giriş noktası
-├── requirements.txt    # Python bağımlılık listesi
-├── settings.json       # API anahtarı, kanal, anahtar kelime vb. yapılandırma
-├── shorts_manager.db   # İndirilen Shorts videolarını takip eden SQLite veritabanı
-├── backups/            # Veritabanı yedekleme dizini
-├── logs/               # Uygulama log dosyaları
-├── reports/            # Oluşturulan raporlar
-└── README.md           # Proje dökümantasyonu
+├── main.py             # Main application logic and entry point
+├── requirements.txt    # Python dependency list
+├── settings.json       # Configuration file for API keys, channels, keywords, etc.
+├── shorts_manager.db   # SQLite database for tracking downloaded shorts
+├── backups/            # Directory for database backups
+├── logs/               # Directory for application log files
+├── reports/            # Directory for generated operational reports
+└── README.md           # Project documentation
+```
 
-⚙️ Yapılandırma Değişkenleri
+## ⚙️ Configuration
 
-settings.json dosyası, AIShortsDownloader’ın çalışma şeklini belirleyen ana dosyadır.
+The `settings.json` file is central to customizing the behavior of `AIShortsDownloader`.
 
-Değişken	Açıklama	Örnek Değer	Zorunlu
-youtube_api_key	Google YouTube Data API v3 anahtarınız.	AIzaSyD...	Evet
-channel_ids	Shorts takibi yapılacak YouTube kanal ID listesi.	["UC_x...", "UC-..."]	Evet
-keywords	Shorts seçimi için kullanılacak anahtar kelimeler.	["teknoloji", "review"]	Evet
-download_path	İndirilen videoların kaydedileceği dizin.	"downloaded_shorts"	Evet
-log_level	Log mesajlarının minimum seviyesi (DEBUG, INFO, vb.).	"INFO"	Hayır
-max_shorts_per_channel	Her çalıştırmada kanal başına indirilecek maksimum Shorts sayısı.	5	Hayır
-backup_interval_days	Veritabanı yedekleme sıklığı (gün).	7	Hayır
-🤝 Katkıda Bulunma
+| Variable                   | Description                                                 | Example Value      | Required |
 
-Katkılarınızı memnuniyetle karşılıyoruz!
-Yeni özellik önerileri, hata düzeltmeleri veya geliştirme fikirleriniz varsa lütfen bir “issue” açın veya “pull request” gönderin.
+|----------------------------|-------------------------------------------------------------|--------------------|----------|
 
-Geliştirici Ortamı Kurulumu
+| `youtube_api_key`          | Your Google YouTube Data API v3 key.                        | `AIzaSyD...`       | Yes      |
 
-Depoyu forklayın.
+| `channel_ids`              | List of YouTube channel IDs to monitor for shorts.          | `["UC_x...", "UC-..."]` | Yes      |
 
-Fork’unuzu klonlayın:
+| `keywords`                 | List of keywords used to filter and select relevant shorts. | `["tech", "review"]` | Yes      |
 
-git clone https://github.com/YOUR_USERNAME/AIShortsDownloader.git
+| `download_path`            | Directory where downloaded shorts will be saved.            | `"downloaded_shorts"` | Yes      |
 
+| `log_level`                | Minimum level for logging messages (e.g., `DEBUG`, `INFO`, `WARNING`, `ERROR`). | `"INFO"`           | No       |
 
-Sanal ortam oluşturun:
+| `max_shorts_per_channel`   | Maximum number of shorts to download per channel in each run. | `5`                | No       |
 
-python -m venv venv
+| `backup_interval_days`     | How often (in days) the SQLite database should be backed up. | `7`                | No       |
 
+## 🤝 Contributing
 
-Ortamı etkinleştirin:
+We welcome contributions! If you have suggestions for improvements, new features, or bug fixes, please open an issue or submit a pull request.
 
-Windows: .\venv\Scripts\activate
+### Development Setup
+1.  Fork the repository.
+2.  Clone your forked repository: `git clone https://github.com/YOUR_USERNAME/AIShortsDownloader.git`
+3.  Create a virtual environment: `python -m venv venv`
+4.  Activate the environment:
+    *   Windows: `.\venv\Scripts\activate`
+    *   macOS/Linux: `source venv/bin/activate`
+5.  Install dependencies: `pip install -r requirements.txt`
+6.  Make your changes and ensure they are tested.
 
-macOS/Linux: source venv/bin/activate
+## 📄 License
 
-Bağımlılıkları yükleyin:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. <!-- TODO: Add LICENSE file -->
 
-pip install -r requirements.txt
+## 🙏 Acknowledgments
 
+-   [yt-dlp](https://github.com/yt-dlp/yt-dlp) for robust video downloading capabilities.
+-   [Google API Python Client](https://github.com/googleapis/google-api-python-client) for seamless interaction with the YouTube Data API.
 
-Geliştirmelerinizi yapın ve test edin.
+## 📞 Support & Contact
 
-📄 Lisans
+-   🐛 Issues: [GitHub Issues](https://github.com/yusufnightin/AIShortsDownloader/issues)
 
-Bu proje MIT Lisansı ile lisanslanmıştır.
-Ayrıntılar için LICENSE
- dosyasına bakın.
-
-🙏 Teşekkürler
-
-yt-dlp
-: Güçlü video indirme altyapısı.
-
-Google API Python Client
-: YouTube Data API ile kolay entegrasyon.
-
-📞 Destek ve İletişim
-
-🐛 Hata Bildirimi: GitHub Issues
+---
 
 <div align="center">
 
-⭐ Yararlı bulduysanız bu depoya yıldız vermeyi unutmayın!
+**⭐ Star this repo if you find it helpful!**
 
-❤️ ile yapılmıştır — yusufnightin
+Made with ❤️ by [yusufnightin](https://github.com/yusufnightin)
 
 </div>
+
