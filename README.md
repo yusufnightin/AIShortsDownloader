@@ -47,7 +47,7 @@
 
 [![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)](https://www.json.org/json-en.html)
 
-## 🚀 Quick Start
+## 🚀 Hızlı Başlangıç
 
 ### Önkoşullar
 - **Python 3.x**: Sisteminizde Python 3.x'in yüklü olduğundan emin olun.
